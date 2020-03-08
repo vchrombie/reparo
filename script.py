@@ -11,7 +11,7 @@ data = json.loads(data.content)
 
 authors_data = {}
 
-for item in data:
+for item in reversed(data):
     data = item['commit']['author']
     if data['name'] not in authors_data.keys():
         authors_data[data['name']] = data['email']
